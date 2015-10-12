@@ -1,0 +1,520 @@
+/*
+Design by Metamorphosis Design
+http://www.metamorphozis.com
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+a#ContentPlaceHolder1_go {
+    display: block;
+	float: left;
+	background: url(images/menu.gif) no-repeat;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+	padding-top: 5px;
+	margin-left: 14px;
+    padding-bottom:5px;
+}
+
+a#ContentPlaceHolder1_go:hover {
+    background: #FFFFFF url(images/menu_hover.gif) no-repeat;
+}
+
+#buttons a#username {
+    background: none;
+
+}
+
+#buttons a#username:hover {
+    color: grey;
+    display: block;
+    background-color: black;
+}
+
+a:link {
+	color: #00B3C8;
+}
+
+a:hover{
+	text-decoration: underline;
+	color: #353535;
+}
+
+a:visited {
+	color: #00B3C8;
+}
+
+*
+{
+border: 0;
+margin: 0;
+}
+
+body
+{
+
+	font: 12px Tahoma, Arial, Helvetica, sans-serif;
+	color: #666666;
+	background: #000100 url(images/bg.jpg);
+}
+
+#main
+{
+margin: 0 auto;
+width: 1022px;
+background: #ffffff url(images/content.jpg);
+}
+
+#header
+{
+width: 998px;
+height: 232px;
+margin-bottom: 11px;
+margin-left: 11px;
+padding-top: 10px;
+}
+
+#logo
+{
+padding-left: 40px;
+text-align: left;
+padding-top: 20px;
+width: 998px;
+margin: 0 auto
+}
+
+#logo a {
+	text-decoration: none;
+	text-transform: lowercase;
+	font-style: italic;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+
+#logo H2 a
+{
+font-size: 10px;
+}
+
+#menu{
+
+background:url(images/menubg.gif) repeat-x top;
+height: 103px;
+margin-bottom: 8px;
+}
+
+#buttons
+{
+width: 1022px;
+margin: 0 auto;
+padding: 0px;
+height: 40px;
+position:relative;
+margin-top: 30px;
+}
+
+#buttons input#findButton {
+    color: #666;
+    background-color: #eee;
+    letter-spacing: 2px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-bottom-width: 3px;
+    cursor:pointer;
+}
+
+#buttons ul {
+    padding-left: 372px;
+	padding-top: 65px;     
+}
+
+#buttons li {
+	display: inline;		
+}
+
+#buttons a {
+	display: block;
+	float: right;
+	background: url(images/menu.gif) no-repeat;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+	padding-top: 2px;
+    padding-bottom: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+	margin-left: 7px;
+    right: 77px;
+}
+
+#buttons a:hover {
+
+	background: #FFFFFF url(images/menu_hover.gif) no-repeat;
+}
+
+/*
+column_box
+*/
+#column_box {
+	padding-left: 15px;
+	padding-bottom: 30px;
+	width: 960px;
+	border: 1px solid #bfbfbf;
+	padding-left: 18px;
+	padding-right: 18px;
+	padding-top: 18px;
+	padding-bottom: 8px;
+	background: #ffffff;
+	margin: 0 auto;
+	margin-bottom: 12px;
+}
+#column_box a {
+	color: #666666;
+}
+#column_box a:hover {
+	color: #000000;
+}
+#column_box p {
+	color: #666666;
+	padding-top: 5px;
+}
+
+#column1, #column2, #column3{
+	float: left;
+	width: 260px;
+	padding-left: 15px;
+}
+
+#column2 {
+	margin: 0px 40px;
+}
+
+#content
+{
+width: 1022px;
+margin-bottom: 5px;
+padding-bottom: 12px;
+position:relative;
+}
+
+#left{
+width: 607px;
+border: 1px solid #bfbfbf;
+margin-left: 12px;
+padding-left: 18px;
+padding-right: 18px;
+padding-top: 18px;
+padding-bottom: 8px;
+background: #ffffff;
+}
+
+#left p{
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+#left H1
+{
+color: #076AFF;
+font-size: 18px;
+padding-bottom: 10px;
+}
+
+#left a
+{
+ color: #00B3C8;
+}
+
+#left a:hover{
+	text-decoration: none;
+	color: #353535;
+}
+
+#left a:visited {
+	color: #00B3C8;
+}
+
+.line{
+	 background:url(images/line.gif) no-repeat;
+	 height: 3px;
+	 width: 594px;
+	 margin: 0 auto;
+	 margin-top: 20px;
+	 padding-bottom: 10px;
+}
+
+#right
+{
+width: 337px;
+float:right;
+margin-right: 14px;
+}
+
+#right a{
+	color: #666666;
+}
+
+#google{
+	border: 1px solid #bfbfbf;
+	background: #ffffff;
+}
+
+#right h2 {
+	height: 31px;
+	background: url(images/title_right.gif) no-repeat;
+	font-size: 12px;
+	color: #00B3C8;
+	padding-top: 9px;
+	padding-left: 25px;
+	margin: 5px;
+}
+
+.google{
+	padding-left: 20px;
+}
+
+#rightbot{
+	width: 337px;
+	margin-top: 10px;
+}
+
+#rightbot h2 {
+	height: 31px;
+	background: url(images/title_right2.gif) no-repeat;
+	font-size: 12px;
+	color: #00B3C8;
+	padding-top: 9px;
+	padding-left: 25px;
+	margin: 5px;
+}
+
+.rightbotleft{
+	width: 164px;
+	border: 1px solid #c3c3c3;
+	padding-bottom: 10px;
+	background: #ffffff;
+}
+
+.rightbotleft ul{
+	padding: 0px;
+}
+
+.rightbotleft ul li{
+	list-style: none;
+	padding-left: 20px;
+	padding-bottom: 4px;
+}
+
+.rightbotleft ul li a{
+	padding-left: 10px;
+	background: url(images/list_style.gif) no-repeat left;
+}
+
+.rightbotleft2{
+	width: 164px;
+	border: 1px solid #c3c3c3;
+	padding-bottom: 10px;
+	margin-top: 7px;
+	background: #ffffff;
+}
+
+#tags{
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 5px;
+}
+
+.rightbotright{
+	width: 164px;
+	border: 1px solid #c3c3c3;
+	padding-bottom: 10px;
+	float:right;
+	background: #ffffff;
+}
+
+.rightbotright ul{
+	padding: 0px;
+}
+
+.rightbotright ul li{
+	list-style: none;
+	padding-left: 20px;
+	padding-bottom: 4px;
+}
+
+.rightbotright ul li a{
+	padding-left: 10px;
+	background: url(images/list_style.gif) no-repeat left;
+}
+
+.date {
+	margin: 0 auto;
+	color: #00B3C8;
+	font-size: 11px;
+	padding: 10px;
+	border: 1px solid #bfbfbf;
+	margin-bottom: 10px;
+	font-weight:bold;
+}
+
+.date a {
+	color: #00B3C8;
+	text-decoration:none;
+}
+
+.rss {
+	margin: 0 auto;
+	color: #00B3C8;
+	font-size: 11px;
+	padding: 10px;
+	border: 1px solid #bfbfbf;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	font-weight:bold;
+}
+
+.rss a {
+	color: #00B3C8;
+	text-decoration:none;
+}
+
+.dateleft{
+	background:url(images/timeicon.gif) no-repeat left;
+	padding-left: 20px;
+	height: 16px;
+	padding-top:2px;
+	width:200px;
+}
+
+.dateright{
+	margin-top: 2px;
+	float:right;
+	background:url(images/tages.gif) right no-repeat;
+	padding-right: 20px;
+	text-align:right;
+	height: 16px;
+}
+
+.rssleft{
+	background:url(images/rss.gif) no-repeat left;
+	padding-left: 20px;
+	height: 16px;
+	padding-top:2px;
+	width:200px;
+}
+
+.rssright{
+	margin-top: 2px;
+	float:right;
+	background:url(images/comment.gif) right no-repeat;
+	padding-right: 20px;
+	text-align:right;
+}
+
+
+#footer
+{
+	margin: 0 auto;
+	font-size: 10px;
+	color: #ffffff;
+	padding-top: 20px;
+	text-align: center;
+	clear:both;
+	padding-bottom: 20px;
+}
+
+#footer a
+{
+color: #ffffff;
+font-size: 10px;
+text-decoration: none;
+}
+.padding
+{
+padding: 10px;
+color:#076AFF;
+font-weight: bold;
+}
+
+
+/*=================================*/
+/* Nivo Slider Demo
+/* November 2010
+/* By: Gilbert Pellegrom
+/* http://dev7studios.com
+/*=================================*/
+
+
+#slider-wrapper {
+    background:url(images/top.jpg) no-repeat;
+width: 998px;
+height: 232px;
+    margin:0 auto;
+}
+
+#slider {
+	position:relative;
+width: 998px;
+height: 232px;
+	background:url(images/loading.gif) no-repeat 50% 50%;
+}
+#slider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+#slider a {
+	border:0;
+	display:block;
+}
+
+.nivo-controlNav {
+	position:absolute;
+	left:260px;
+	bottom:-42px;
+	display: none;
+}
+.nivo-controlNav a {
+	display:block;
+	width:22px;
+	height:22px;
+	background:url(images/bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+}
+.nivo-controlNav a.active {
+	background-position:0 -22px;
+}
+
+.nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(images/arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+}
+a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+a.nivo-prevNav {
+	left:15px;
+}
+
+.nivo-caption {
+    text-shadow:none;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.nivo-caption a { 
+    color:#efe9d1;
+    text-decoration:underline;
+}

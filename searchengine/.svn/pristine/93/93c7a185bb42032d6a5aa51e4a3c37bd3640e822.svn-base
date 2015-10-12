@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+
+public partial class login : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Master.getFindButton.Click += new EventHandler(findButton_click);
+    }
+
+    private void findButton_click(object sender, EventArgs e)
+    {
+        Application["name"] = Master.getName.Text.ToString();
+        Application["cat"] = Master.getCatagory.SelectedItem;
+        Application["country"] = Master.getCountry.SelectedItem;
+
+        Helper h = new Helper();
+        Response.Redirect(h.generateSearchUrl(Master.getName.Text.ToString(), Master.getCatagory.SelectedItem.ToString(), Master.getCountry.SelectedItem.ToString()));
+
+    }
+    protected void button_Click(object sender, EventArgs e)
+    {
+        if (findMatch(username.Value, password.Value))
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        else
+        {
+            Session.Remove("user");
+            error.Text = "* invalid username/password";
+        }
+    }
+
+    private bool findMatch(string user, string password)
+    {
+        string _connStr = ConfigurationManager.ConnectionStrings["eBanglaConnectionString1"].ConnectionString;
+        SqlConnection conn = new SqlConnection(_connStr);
+        string sql = "SELECT Username,Email,Password FROM Users";
+        DataTable table = new DataTable();
+        SqlCommand cmd = new SqlCommand(sql, conn);
+        SqlDataAdapter ad = new SqlDataAdapter(cmd);
+        ad.Fill(table);
+        conn.Close();
+        Helper h = new Helper();
+        foreach (DataRow row in table.Rows)
+        {
+            if (user == row["Username"].ToString() || user == row["Email"].ToString())
+            {
+                Session["user"] = row["Username"].ToString();
+                return h.ValidateMD5HashData(password, row["Password"].ToString());
+            }
+        }
+        return false;
+    }
+}

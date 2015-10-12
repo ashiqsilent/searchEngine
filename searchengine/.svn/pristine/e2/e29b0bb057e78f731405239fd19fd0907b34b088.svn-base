@@ -1,0 +1,41 @@
+﻿<?xml version="1.0"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <configSections>
+    <section name="rewriter" requirePermission="false" type="Intelligencia.UrlRewriter.Configuration.RewriterConfigurationSectionHandler, Intelligencia.UrlRewriter"/>
+  </configSections>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5">
+      <assemblies>
+        <add assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+      </assemblies>
+    </compilation>
+    <httpRuntime targetFramework="4.5"/>
+    <httpModules>
+      <add name="UrlRewriter" type="Intelligencia.UrlRewriter.RewriterHttpModule, Intelligencia.UrlRewriter"/>
+    </httpModules>
+    <authentication mode="Forms">
+      <forms loginUrl="~/login.aspx"/>
+    </authentication>
+  </system.web>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true">
+      <add name="UrlRewriter" type="Intelligencia.UrlRewriter.RewriterHttpModule"/>
+    </modules>
+    <validation validateIntegratedModeConfiguration="false"/>
+  </system.webServer>
+  <rewriter>
+    <rewrite url="~/details/(.+)/(.+)" to="~/detail.aspx?code=$1"/>
+    <rewrite url="~/searchResult/(.+)/(.+)/(.+)" to="~/searchResult.aspx"/>
+    <rewrite url="~/index" to="~/index.aspx"/>
+  </rewriter>
+  <connectionStrings>
+    <add name="eBanglaConnectionString1" connectionString="Data Source=ASHIQ\SQLEXPRESS;Initial Catalog=eBangla;Integrated Security=True" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  <appSettings>
+    <add key="ValidationSettings:UnobtrusiveValidationMode" value="None"/>
+  </appSettings>
+</configuration>

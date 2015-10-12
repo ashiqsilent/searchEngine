@@ -1,0 +1,84 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Configuration; // to use the ConfigurationManager
+using System.Data; // to use DataSet or DataTable
+using System.Data.SqlClient;
+
+public partial class review : System.Web.UI.Page
+{
+    static DataTable companies;
+    public string country;
+    static List<string> suggestions;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Master.getFindButton.Click += new EventHandler(findButton_click);
+        if (!IsPostBack)
+        {
+            DropDownList1.SelectedValue = "CANADA";
+            country = "CANADA";
+        }
+        if (IsPostBack)
+        {
+            country = DropDownList1.SelectedValue;
+        }
+        getCompanies();
+    }
+
+    private void findButton_click(object sender, EventArgs e)
+    {
+        Application["name"] = Master.getName.Text.ToString();
+        Application["cat"] = Master.getCatagory.SelectedItem;
+        Application["country"] = Master.getCountry.SelectedItem;
+
+        Helper h = new Helper();
+        Response.Redirect(h.generateSearchUrl(Master.getName.Text.ToString(), Master.getCatagory.SelectedItem.ToString(), Master.getCountry.SelectedItem.ToString()));
+
+    }
+
+    private void getCompanies()
+    {
+        SqlDataSource2.SelectParameters.Clear();
+        SqlDataSource2.SelectParameters.Add("Country", country);
+        DataSourceSelectArguments args = new DataSourceSelectArguments();
+        DataView view = (DataView)SqlDataSource2.Select(args);
+        companies = view.ToTable();
+    }
+
+    [System.Web.Services.WebMethodAttribute(), System.Web.Script.Services.ScriptMethodAttribute()]
+    public static string[] GetCompletionList(string prefixText, int count, string contextKey)
+    {
+        suggestions = new List<string>();
+        foreach (DataRow row in companies.Rows)
+        {
+            if (row["Title"].ToString().ToLower().Contains(prefixText.ToLower()))
+            {
+                suggestions.Add(row["Title"].ToString());
+            }
+        }
+        return suggestions.ToArray();
+    }
+
+    protected void goButton_Click(object sender, EventArgs e)
+    {
+        if (!suggestions.Contains(TextBox1.Text)) {
+            Label1.Text = "Sorry no match found";
+        }
+        else
+        {
+            SqlDataSource3.SelectParameters.Clear();
+            SqlDataSource3.SelectParameters.Add("Country", country);
+            SqlDataSource3.SelectParameters.Add("Title", TextBox1.Text);
+            DataSourceSelectArguments args = new DataSourceSelectArguments();
+            DataView view = (DataView)SqlDataSource3.Select(args);
+            DataTable result = view.ToTable();
+            Helper h = new Helper();
+            Application["detailID"] = result.Rows[0]["ID"];
+            Response.Redirect("reviewDetail.aspx");
+        }
+    }
+}

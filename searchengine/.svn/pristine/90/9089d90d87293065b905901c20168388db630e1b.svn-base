@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Configuration; // to use the ConfigurationManager
+using System.Data; // to use DataSet or DataTable
+using System.Data.SqlClient;
+
+public partial class review : System.Web.UI.Page
+{
+    static DataTable companies;
+    public string country;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            DropDownList1.SelectedValue = "CANADA";
+            country = "CANADA";
+        }
+        if (IsPostBack)
+        {
+            country = DropDownList1.SelectedValue;
+        }
+        getCompanies();
+    }
+
+
+    private void getCompanies()
+    {
+        SqlDataSource2.SelectParameters.Clear();
+        SqlDataSource2.SelectParameters.Add("Country", country);
+        DataSourceSelectArguments args = new DataSourceSelectArguments();
+        DataView view = (DataView)SqlDataSource2.Select(args);
+        companies = view.ToTable();
+    }
+
+    [System.Web.Services.WebMethodAttribute(), System.Web.Script.Services.ScriptMethodAttribute()]
+    public static string[] GetCompletionList(string prefixText, int count, string contextKey)
+    {
+        List<string> result = new List<string>();
+        foreach (DataRow row in companies.Rows)
+        {
+            if (row["Title"].ToString().ToLower().Contains(prefixText.ToLower()))
+            {
+                result.Add(row["Title"].ToString());
+            }
+        }
+        return result.ToArray();
+    }
+
+}

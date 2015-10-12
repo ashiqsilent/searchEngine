@@ -1,0 +1,16 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="reviewDetail.aspx.cs" Inherits="reviewDetail" %>
+<%@ MasterType VirtualPath="~/MasterPage.master" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div>
+        <asp:HyperLink ID="title" runat="server" style="padding-left:50px;" Font-Size="Large" Font-Bold="True" Font-Underline="True" ForeColor="Blue">Title</asp:HyperLink>
+        <asp:Label ID="address" runat="server" style="padding-left:400px;"></asp:Label>
+    </div>
+    <div>
+        <asp:Label ID="city_post" runat="server" style="padding-left:489px;"></asp:Label>
+    </div>
+    
+</asp:Content>
+

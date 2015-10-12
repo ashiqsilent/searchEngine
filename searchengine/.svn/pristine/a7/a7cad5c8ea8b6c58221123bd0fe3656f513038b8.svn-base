@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Search Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/nivo-slider.css" type="text/css" media="screen" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+    <form id="form1" runat="server">
+        <div id="menu">
+
+            <div id="logo">
+		            <h2>Search Engine</h2></div>
+
+            <div id="buttons">
+                <asp:TextBox ID="TextBox1" runat="server" data-default="Company Name or leave blank for all" placeholder="Company Name or leave blank for all" style="height:23px; width: 225px"></asp:TextBox>
+                <asp:DropDownList ID="categoryList" runat="server" style="width: 219px; height: 23px;" AppendDataBoundItems="true" DataSourceID="SqlDataSource1" DataTextField="Category" DataValueField="Category">
+                    <asp:ListItem>All Categories</asp:ListItem>
+                </asp:DropDownList>
+                <asp:DropDownList ID="countryList" runat="server" style="width: 180px; height: 23px;" AppendDataBoundItems="true" DataSourceID="SqlDataSource2" DataTextField="Country" DataValueField="Country">
+                    <asp:ListItem>All Countries</asp:ListItem>
+                </asp:DropDownList>
+                <asp:Button ID="findButton" runat="server" Text="Search" style="height: 23px; width: 95px" />
+                <asp:HyperLink ID="signIn" href="/login.aspx" runat="server">Sign In</asp:HyperLink>
+                <asp:HyperLink ID="register" href="/register.aspx" runat="server">Register</asp:HyperLink>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:eBanglaConnectionString1 %>" SelectCommand="SELECT DISTINCT [Category] FROM [eDirectory] ORDER BY [Category]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:eBanglaConnectionString1 %>" SelectCommand="SELECT DISTINCT [Country] FROM [eDirectory] ORDER BY [Country]"></asp:SqlDataSource>
+                <div id="user" runat="server" style="position:absolute; right:0;top:0;z-index:100000" visible="false">
+                    <asp:HyperLink ID="username" runat="server" href="/user.aspx"></asp:HyperLink>
+                    <div id="options">
+                        <div class="link"><asp:LinkButton ID="LinkButton1" class="links" runat="server">Write a review</asp:LinkButton></div>
+                        <div class="link"><asp:LinkButton ID="LinkButton2" class="links" runat="server">Favourites</asp:LinkButton></div>
+                        <div class="link"><asp:LinkButton ID="LinkButton3" class="links" runat="server">Logout</asp:LinkButton></div>
+ 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+        <!-- header begins -->
+            <div id="header">	
+	
+	             <div id="wrapper">
+                    <div id="slider-wrapper">        
+                        <div id="slider" class="nivoSlider">
+                            <img src="/images/header.jpg" alt="" />
+                            <img src="/images/header2.jpg" alt=""/>
+                            <img src="/images/header3.jpg" alt="" />
+				            <img src="/images/header4.jpg" alt="" />
+                        </div>        
+                    </div>
+	
+            <script type="text/javascript" src="/lib/jquery-1.4.3.min.js"></script>
+                <script type="text/javascript" src="/lib/jquery.nivo.slider.pack.js"></script>
+                <script type="text/javascript">
+                    $(window).load(function () {
+                        $('#slider').nivoSlider();
+                    });
+                </script>
+	            </div>
+	
+            </div>
+        <!-- header ends -->
+        <!-- content begins -->
+
+            <div id="content">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <!-- content ends -->
+
+
+
+        <!-- footer begins -->
+        <div id="footer">
+          <p>Copyright  2011. <!-- Do not remove --><a href="http://www.myfreecsstemplates.com/" title="Free CSS Templates">Free CSS Templates</a><!-- end --></p>
+		        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p></div>
+        <!-- footer ends -->
+    </form>
+</body>
+</html>

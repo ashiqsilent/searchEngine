@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class MasterPage : System.Web.UI.MasterPage
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    public TextBox getName 
+    {
+        get { return this.TextBox1; }
+    }
+
+    public DropDownList getCatagory
+    {
+        get { return this.categoryList ; }
+    }
+
+    public DropDownList getCountry
+    {
+        get { return this.countryList; }
+    }
+
+    public Button getFindButton
+    {
+        get { return this.findButton; }
+    }
+}
