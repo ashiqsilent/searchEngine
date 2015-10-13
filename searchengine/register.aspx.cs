@@ -89,7 +89,7 @@ public partial class register : System.Web.UI.Page
     {
         string _connStr = ConfigurationManager.ConnectionStrings["eBanglaConnectionString1"].ConnectionString;
         SqlConnection conn = new SqlConnection(_connStr);
-        string sql = "INSERT INTO Users (Username, Password, Email) values (@username, @password, @email)";
+        string sql = "use eBangla; INSERT INTO Users (Username, Password, Email) values (@username, @password, @email)";
         SqlCommand cmd = new SqlCommand(sql, conn);
         SqlParameter prm = new SqlParameter("@username", usernamesignup.Value);
         cmd.Parameters.Add(prm);
