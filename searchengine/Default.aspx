@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:HyperLink ID="HyperLink1" runat="server">HyperLink</asp:HyperLink>
+        <a
     </form>
 </body>
 </html>
