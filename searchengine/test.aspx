@@ -4,41 +4,37 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <style>
-        .second, .sub {
-            display: none;
-            
-        }
-        .main {
-            display:block;
-            height : 50px;
-            width: 160px;
-            border: solid;
-            text-align: center;
-            border-width: 1px;
-        }
-        .main:hover .sub{
-            display:block;
-            z-index:2;
-            width: 300px;
-            border: solid;
-            border-width: 1px;
-            text-align:left;
-        }
-    </style>
-    <title></title>
+    <title>Testing testing 1 2 3 .....</title>
+    <script src="lib/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input").keypress(function (e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    $('#Button2').click();
+                }
+            });
+
+        });
+
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="main">
-        <asp:HyperLink ID="HyperLink1" href="#" runat="server">linkinsherasdasd</asp:HyperLink>
-        <div class="sub">
-            <div>1111</div>
-            <div>2222</div>
-            <div>3333</div>
-        </div>
-    </div>
-    <div class="second">lalala</div>
+
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <br />
+        <br />
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button 1" />
+        <br />
+        <br />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button 2" />
+
     </form>
 </body>
 </html>

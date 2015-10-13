@@ -11,4 +11,14 @@ public partial class test : System.Web.UI.Page
     {
 
     }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Label1.Text = "Clicked by Button 1";
+    }
+
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Label1.Text = "Clicked by Button 2";
+    }
 }

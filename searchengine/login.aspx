@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="/formStyle.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script src="lib/jquery-1.11.1.min.js"></script>
     <script>
         $(document).keypress(function (e) {
             if (e.which == 13) {
