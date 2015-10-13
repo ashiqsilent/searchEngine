@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="detail.aspx.cs" Inherits="detail" %>
-<%@ MasterType VirtualPath="~/MasterPage.master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DesignView.master" AutoEventWireup="true" CodeFile="detail.aspx.cs" Inherits="detail" %>
+<%@ MasterType VirtualPath="~/DesignView.master" %>
 
 <%@ Register assembly="GMaps" namespace="Subgurim.Controles" tagprefix="cc1" %>
 

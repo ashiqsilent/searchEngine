@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="addBusiness.aspx.cs" Inherits="addBusiness" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DesignView.master" AutoEventWireup="true" CodeFile="addBusiness.aspx.cs" Inherits="addBusiness" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="/formStyle.css" />
