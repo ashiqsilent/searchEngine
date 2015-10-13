@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 
-public partial class MasterPage : System.Web.UI.MasterPage
+public partial class DesignView : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
